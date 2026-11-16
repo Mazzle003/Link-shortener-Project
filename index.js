@@ -83,10 +83,35 @@ const shortenLink = async (link) => {
     });
 
     const data = await response.json();
-    console.log("Shortened link:", data);
+    localStorage.setItem("shortenedLink", JSON.stringify(data));
+    let newdata = JSON.parse(localStorage.getItem("shortenedLink"));
+    let original_url = newdata.originalUrl;
+    originurl.innerHTML = original_url.substring(0, 30) + "...";
+    shorturl.innerHTML = newdata.shortUrl;
     return data;
   } catch (error) {
     console.error("Error shortening the link:", error);
     throw error;
   }
 }
+
+let newdata = JSON.parse(localStorage.getItem("shortenedLink"));
+let original_url = newdata.originalUrl;
+originurl.innerHTML = original_url.substring(0, 30) + "...";
+shorturl.innerHTML = newdata.shortUrl;
+
+copylink.addEventListener("click", () => {
+  const shortUrl = shorturl.innerHTML;
+  navigator.clipboard.writeText(shortUrl)
+    .then(() => {
+      copylink.innerHTML = "Copied!";
+      copylink.classList.add("bg-[#3b3054]");
+      setTimeout(() => {
+        copylink.innerHTML = "Copy";
+        copylink.classList.remove("bg-[#3b3054]");
+      }, 2000);
+    })
+    .catch((error) => {
+      console.error("Error copying to clipboard:", error);
+    });
+});
