@@ -57,6 +57,7 @@ shortenIt.addEventListener("click", () => {
     inputForm.classList.remove("border-2", "border-[#f46262]");
     addLinkText.classList.add("opacity-0", "invisible", "max-h-0");
     addLinkText.classList.remove("opacity-100", "visible", "mt-[0.5rem]");
+    shortenLink(inputValue);
   } else {
     // if theres no link inputed by the user
     inputForm.classList.add("border-2", "border-[#f46262]");
@@ -64,3 +65,28 @@ shortenIt.addEventListener("click", () => {
     addLinkText.classList.add("opacity-100", "visible", "mt-[0.5rem]");
   }
 });
+
+
+const short_key = "uv_ebe657cb78eb6b71daa551805448e684822f27923c6e5d2e"
+const shortenLink = async (link) => {
+  try {
+    const response = await fetch("https://urlvanish.com/create_api.php", {
+      method: "POST",
+      headers: {
+        accept: "application/json",
+        "content-type": "application/json",
+        authorization: `Bearer ${short_key}`,
+      },
+      body: JSON.stringify({
+        originalUrl: link,
+      }),
+    });
+
+    const data = await response.json();
+    console.log("Shortened link:", data);
+    return data;
+  } catch (error) {
+    console.error("Error shortening the link:", error);
+    throw error;
+  }
+}
