@@ -1,7 +1,6 @@
+// OPENING AND CLOSING MENU DROPDOWN WITH ANIMATION
 menuIcon.addEventListener("click", () => {
-  // const hasNoHidden = menuIcon.classList.contains("hidden");
-  // console.log(hasNoHidden);
-
+  //   open menu
   menuIcon.classList.add("hidden");
   menuCloseIcon.classList.remove("hidden");
 
@@ -23,6 +22,7 @@ menuIcon.addEventListener("click", () => {
     "p-[4rem]",
   );
 
+  // close menu
   menuCloseIcon.addEventListener("click", () => {
     menuIcon.classList.remove("hidden");
     menuCloseIcon.classList.add("hidden");
@@ -48,5 +48,19 @@ menuIcon.addEventListener("click", () => {
   });
 });
 
+// ASKING USERS TO ADD A LINK IF THE INPUT IS EMPTY AND BUTTON CLICKED
+shortenIt.addEventListener("click", () => {
+  const inputValue = inputForm.value;
 
-
+  if (inputValue) {
+    // if theres a link inputed by the user
+    inputForm.classList.remove("border-2", "border-[#f46262]");
+    addLinkText.classList.add("opacity-0", "invisible", "max-h-0");
+    addLinkText.classList.remove("opacity-100", "visible", "mt-[0.5rem]");
+  } else {
+    // if theres no link inputed by the user
+    inputForm.classList.add("border-2", "border-[#f46262]");
+    addLinkText.classList.remove("opacity-0", "invisible", "max-h-0");
+    addLinkText.classList.add("opacity-100", "visible", "mt-[0.5rem]");
+  }
+});

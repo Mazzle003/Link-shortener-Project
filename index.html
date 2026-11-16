@@ -99,10 +99,16 @@
         <div
           class="shorten-link-box w-[90%] md:w-[80%] 2xl:max-w-[120rem] bg-[#3b3054] bg-[url(/images/bg-shorten-mobile.svg)] lg:bg-[url(/images/bg-shorten-deskdop.svg)] bg-cover bg-no-repeat bg-center rounded-[1rem] bottom-0 translate-y-1/2 left-1/2 -translate-x-1/2 sm:left-1/2 sm:-translate-x-1/2 text-[1.6rem] absolute">
           <div class="p-[2rem] md:p-[4rem] flex flex-col md:flex-row items-center justify-center gap-[1.5rem]">
-            <input class="w-[100%] md:w-[70%] lg:w-[80%] bg-[#fff] text-[1.4rem] py-[1rem] px-[1.5rem] md:py-[1.2rem] md:px-[3rem] rounded-[0.5rem] outline-none" id="" type="text"
-              placeholder="Shorten a Link here ...... " />
-            <button
-              class="w-[100%] md:w-[30%] lg:w-[20%] bg-[#2acfcf] hover:bg-[#94E7E7] text-[#fff] py-[1rem] px-[1.5rem] md:py-[1.2rem] md:px-[3rem] rounded-[0.5rem] font-[500] transition-all duration-300">Shorten
+            <div class="w-[100%]">
+              <input id="inputForm"
+                class="w-[100%] bg-[#fff] text-[1.4rem] py-[1rem] px-[1.5rem] md:py-[1.2rem] md:px-[3rem] rounded-[0.5rem] outline-none transition-all duration-200"
+                id="" type="text" placeholder="Shorten a Link here ...... " required />
+              <p id="addLinkText" class="text-[#f46262] italic opacity-0 invisible max-h-0 transition-all duration-200">Please add a
+                link</p>
+            </div>
+            
+            <button id="shortenIt"
+              class="w-[100%] md:w-[30%] lg:w-[20%] bg-[#2acfcf] hover:bg-[#94E7E7] text-[#fff] py-[1rem] px-[1.5rem] md:py-[1.2rem] md:px-[3rem] rounded-[0.5rem] font-[500] self-start transition-all duration-300">Shorten
               It!</button>
           </div>
         </div>
