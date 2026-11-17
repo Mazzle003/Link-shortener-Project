@@ -93,7 +93,7 @@ const shortenLink = async (link) => {
     console.error("Error shortening the link:", error);
     throw error;
   }
-}
+};
 
 let newdata = JSON.parse(localStorage.getItem("shortenedLink"));
 let original_url = newdata.originalUrl;

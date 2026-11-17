@@ -109,7 +109,7 @@
             </div>
             
             <button id="shortenIt"
-              class="w-[100%] md:w-[30%] lg:w-[20%] bg-[#2acfcf] hover:bg-[#94E7E7] text-[#fff] py-[1rem] px-[1.5rem] md:py-[1.2rem] md:px-[3rem] rounded-[0.5rem] font-[500] self-start transition-all duration-300">Shorten
+              class="w-[100%] md:w-[30%] lg:w-[20%] bg-[#2acfcf] hover:bg-[#94E7E7] text-[#fff] py-[1rem] px-[1.5rem] md:py-[1.2rem] md:px-[3rem] rounded-[0.5rem] font-[500] self-start transition-all duration-300 cursor-pointer">Shorten
               It!</button>
           </div>
         </div>
@@ -119,16 +119,18 @@
         class="bg-[#F0F1F6] features-section flex flex-col items-center gap-[2rem] pb-[10rem] pb-[3rem]">
       
         <div
-          class="shortened-links-box w-[90%] md:w-[80%] 2xl:w-[120rem] bg-[#FFF] px-[4rem] py-[2rem] rounded-[1rem] mt-[10rem]">
-          <div class="flex flex-col md:flex-row items-center justify-between">
-            <div>`
-              <a class="block text-[#000] font-[500]" href="#" id="originurl">https://www.frontendmentor.io</a>
+          class="shortened-links-box w-[90%] md:w-[80%] 2xl:w-[120rem] bg-[#FFF] rounded-[1rem] mt-[10rem] p-[1.5rem] md:p-[2rem]">
+          <div class="flex flex-col md:flex-row md:items-center justify-between">
+            <div class="border-b-1 md:border-none pb-[1rem] md:pb-[0]">
+              <a class="text-[#000] font-[500]" href="#" id="originurl">https://www.frontendmentor.io</a>
             </div>
-            <div class="flex flex-col md:flex-row items-center gap-[2rem]">
-              <div>
-                <a class="text-[#2acfcf] font-[500]" href="#" id="shorturl">https://www.rel.ink/k4kyk</a>
+            <div class="flex flex-col md:flex-row md:items-center md:gap-[2rem]">
+              <div class="py-[1rem] md:py-[0]">
+                <a class="text-[#2acfcf] hover:text-[#94E7E7] font-[500]" href="" id="shorturl">https://www.rel.ink/k4kyk</a>
               </div>
-              <button class="w-[100%] bg-[#2acfcf] text-[#fff] font-[500] py-[1rem] px-[4rem] rounded-[1rem]" id="copylink">Copy</button>
+              <button
+                class="w-[100%] bg-[#2acfcf] text-[#fff] font-[500] py-[1rem] px-[4rem] rounded-[1rem] cursor-pointer transition-all duration-200"
+                id="copylink">Copy</button>
             </div>
           </div>
         </div>
